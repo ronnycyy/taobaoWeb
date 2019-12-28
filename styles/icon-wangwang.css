@@ -1,0 +1,21 @@
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1577544911281'); /* IE9 */
+  src: url('iconfont.eot?t=1577544911281#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAPoAAsAAAAAB+gAAAOcAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCCcAqDcIMbATYCJAMICwYABCAFhG0HMhvDBhEVnP3Ifha4eyeMZsCEJhLG6b7FO3pCEEnQ90XwPNp9f26Smc3mrfkBqILckR2F9s/9n9phX+iAsjDPU5/+x/2xklyuCwQKWMAOjNMBOiAmKg1gOt2IUB6h9AKt9Yl7x78hPt95l+PamyZ1AcaBFNieGG0MuEAC84Abxi5oicchgCOLYki9BpmFAIvBHCeADBvcUgewGS2moVCwCH7FUoMsxcOqeeoqO5YEn5cvDGJB4WnMklYDkhoBtd7ns1L01GCCbp6eldOZAbYKNFAMMCDtKq0t0FG0GBqnRg15YFuFAu/zBYHH3ewPDwTEx8yPACADcq+J5/AvlV0BYKAzbAZODno66CnJ8RV8GvBBx30RfIrAbIJycrf9pufip+7Vv9fxxGveDcDsNBFN9lLi9v12hwM1JvNJHo235SyUMjgUDifuLTKXnVVZs0xHbymIXuWFzuXfYjQLX+G1/b17tY89564DJE4FJGy0fLrb7uLdevlWUlCr3fkq9+/X2fuSJ22S1rBsxqVyJwQUjga1NY1H54tpPJpIXLTVJJen08V0vVZK5Tb8GQxBjLcdyPfGNix7O7gFHR1t6x1yHYbUqZmniF80MP7zaDHuyLmKvc+7xkelxnpcFW76l+b75kBKVwioh3gdy3wpmoe964zq1HVC8P4/forxxEjcuBkaiQA7vf4I/NzSSsxy0zmpFmFY3Ky3Y1sbMQ6uw11CX0KnqoWs4m5A1oC+lfUgErjAzzpJw3NG9q3qEsCu0KtFGeFmKaM2e3MyXUyvErPKlRXeycFT/9kiztSb2jVoAzJxaXczs2rVvo0BtQAIhumTOvbffYf5NzrurImu9s+GDACPiy+6DdzBMEM3O9g7tAn8KV7HBqMJTJ0yCq8yqdiMfgNlDgcEYGccz4faEyExC5bzIBRhZEJjyUcYajF4hCgHH0tNOIrScHWIeMagERMOFGEWgBDDPigGUZyAJoYvYag/eCTxh0+MHOHoIPFbhiggQdQllIwG1AeCnqu1DSzCwjO6R5aUFgS0O9IWAtA3XT5xwoo0xYzt6QZmC5bmAhM4DXOeYaE5oubGMy9j29qqCzV6LjtBXQhEwiAGQPEBCGhmKtZrzYjC+88gjgcZCTXUVTnvIMRG6B7oaeg6ECdp7VR3K+dsPHEMMIwFsBAzBWACZiRb0RlgqR4UQTRMgx8QXhhpUTPbVdosLy9vtw1wmColVqbGTpTVOZrdDg==') format('woff2'),
+  url('iconfont.woff?t=1577544911281') format('woff'),
+  url('iconfont.ttf?t=1577544911281') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('iconfont.svg?t=1577544911281#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-wangwang:before {
+  content: "\e624";
+}
+
