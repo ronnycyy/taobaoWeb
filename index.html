@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- 
+        project name: 淘宝网首页
+        author: ronny
+        start time: 2019-10-27 12:23:00
+
+        ------------------------------------------------
+        It's my show time.
+    -->
+
+    <meta charset="UTF-8">
+    <!-- 爬虫会挑重点去收录，title权重是最高的，（接下来是h1 -> h6）
+        一般情况下，用户搜一个关键词，他能够搜到你的网站，很大一部分原因是你的title和关键词比较匹配。
+     -->
+    <title>淘宝网 - 淘！我喜欢</title>    
+
+    <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="styles/icon-close.css">
+    <link rel="stylesheet" href="styles/rightArrow.css">
+    <link rel="stylesheet" href="styles/leftArrow.css">
+    <link rel="stylesheet" href="styles/rightTriangle.css">
+    <link rel="stylesheet" href="styles/qrCode.css">
+    <link rel="stylesheet" href="styles/icon-smiling.css">
+    <link rel="stylesheet" href="styles/icon-quotation.css">
+    <link rel="stylesheet" href="styles/icon-wangwang.css">
+    <!--设置icon时，图标要放在根目录下 link要放head中-->
+    <link rel="icon" href="favicon.ico">   
+
+    <!--
+        1. 设置所有a标签的根路径
+        2. 设置所有a标签的target属性
+        3. 一个页面只能有一个base标签
+    -->
+    <base target="_blank">    
+</head>
+<body>
+    <!-- 先写结构，再写样式 -->
+
+    <!-- 头部信息 -->
+    <div id="headMessage" class="clearfix layer">
+        <ul class="fl">
+            <li>
+                <span>中国大陆</span>
+                <span class="iconfont arrow">&#xe62d;</span>
+            </li>
+            <li>
+                <a href="#" class="login mr7">亲，请登录</a>
+                <a href="#" class="mr7">免费注册</a>
+            </li>
+            <li>
+                <a href="#">手机逛淘宝</a>
+            </li>
+        </ul>
+
+        <ul class="fr">
+            <li>
+                <a href="#">我的淘宝</a>
+                <span class="iconfont arrow">&#xe62d;</span>
+            </li>
+            <li>
+                <span class="iconfont mr5 c4">&#xe63a;</span>
+                <a href="#">购物车</a>
+                <strong>0</strong>
+                <span class="iconfont arrow">&#xe62d;</span>
+            </li>
+            <li>
+                <span class="iconfont mr5">&#xe642;</span>
+                <a href="#"><span>收藏夹</span></a>
+                <span class="iconfont arrow">&#xe62d;</span>
+            </li>
+            <li>
+                <a href="#">商品分类</a>
+            </li>
+            <li>|</li>
+            <li>
+                <a href="#">千牛卖家中心</a>
+                <span class="iconfont arrow">&#xe62d;</span>
+            </li>
+            <li>
+                <a href="#">联系客服</a>
+                <span class="iconfont arrow">&#xe62d;</span>
+            </li>
+            <li>
+                <span class="iconfont mr5 c4">&#xe625;</span>
+                <a href="#">网站导航</a>
+                <span class="iconfont arrow">&#xe62d;</span>
+            </li>
+        </ul>
+    </div>
+
+    <!-- 头部广告 -->
+    <div id="headAd">
+        <div class="layer clearfix">
+            <a href="#" class="fl go"><img src="images/go.png" alt="tianmao"></a>
+            <ul class="fr">
+                <li class="item1">
+                    <a href="#" class="fr"><img src="images/adimg_01.png" alt=""></a>
+                    <h3><a href="#">家具建材</a></h3>
+                    <p><a href="#">送500台</a></p>
+                </li>
+                <li class="item2">
+                    <a href="#" class="fr"><img src="images/adimg_01.png" alt=""></a>
+                    <h3><a href="#">家具建材</a></h3>
+                    <p><a href="#">送500台</a></p>
+                </li>
+                <li class="item3">
+                    <a href="#" class="fr"><img src="images/adimg_01.png" alt=""></a>
+                    <h3><a href="#">家具建材</a></h3>
+                    <p><a href="#">送500台</a></p>
+                </li>
+                <li class="item4">
+                    <a href="#" class="fr"><img src="images/adimg_01.png" alt=""></a>
+                    <h3><a href="#">家具建材</a></h3>
+                    <p><a href="#">送500台</a></p>
+                </li>
+                <li class="item5">
+                    <a href="#" class="fr"><img src="images/adimg_01.png" alt=""></a>
+                    <h3><a href="#">家具建材</a></h3>
+                    <p><a href="#">送500台</a></p>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 头部搜索 -->
+    <div id="headSearch">
+        <div class="clearfix layer">
+            <!-- 
+                先把两侧浮动的元素写上，因为两侧浮动脱离文档流，居中的元素不用浮动，会自动上去，这时候加上margin: 0 auto，就自然居中了。
+             -->
+            <h1 class="fl"><a href="#">淘宝网</a></h1>
+
+            <div class="code fr">
+                <span class="iconfont icon-guanbi close"></span>
+                <span class="c5">手机淘宝</span>
+                <img src="images/code.png" alt="二维码">
+            </div>
+
+            <div class="search">
+                <ul class="searchTab clearfix">
+                    <!-- 
+                            互联网啊它老跟动物过不去，你看百度它是个熊，腾讯是企鹅，天猫是只猫，京东是狗，UC是松鼠，去哪儿是骆驼，
+                        还有飞猪啊途牛啊咸鱼啊虾米音乐啊等等等等乱七八糟的。互联网大会的时候，各个大佬都去，这时候感觉就像动物园开运动会一样。
+                        -->
+                    <li class="active">宝贝</li>
+                    <li>天猫</li>
+                    <li>店铺</li>
+                </ul>
+
+                <div class="searchContent clearfix">
+                    <form>
+                        <div class="searchBox fl">
+                            <input type="text">
+                            <div class="placeholder">
+                                <i class="iconfont">&#xe64d;</i>
+                                <span>新款小包包网红同款</span>
+                            </div>
+                            <span class="iconfont imgSearch">&#xe687;</span>
+                        </div>
+                        <div class="btn fl">
+                            <button type="submit">搜索</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="hotKey">
+                    <a href="#">新款连衣裙</a>
+                    <a href="#">四件套</a>
+                    <a href="#" class="c5">潮流T恤</a>
+                    <a href="#">时尚女鞋</a>
+                    <a href="#">短裤</a>
+                    <a href="#">半身裙</a>
+                    <a href="#">男士外套</a>
+                    <a href="#">墙纸</a>
+                    <a href="#">行车记录仪</a>
+                    <a href="#">新款男鞋</a>
+                    <a href="#">耳机</a>
+                    <a href="#">时尚女包</a>
+                    <a href="#">沙发</a>
+                </div>
+            </div>
+        </div>
+    </div> 
+
+    <!-- 导航 -->
+    <div id="nav" class="layer clearfix">
+        <h2 class="fl">主题市场</h2>
+        <ul>
+            <li class="size"><a href="#">天猫</a></li>
+            <li class="size"><a href="#">聚划算</a></li class="size">
+            <li class="size"><a href="#">天猫超市</a></li class="size">
+            <li class="line">|</li>
+            <li><a href="#">淘抢购</a></li>
+            <li><a href="#">电器城</a></li>
+            <li><a href="#">司法拍卖</a></li>
+            <li><a href="#">淘宝心选</a></li>
+            <li><a href="#">兴农脱贫</a></li>
+            <li class="line">|</li>
+            <li><a href="#">飞猪旅行</a></li>
+            <li><a href="#">智能生活</a></li>
+            <li><a href="#">苏宁易购</a></li>
+        </ul>
+    </div>
+
+    <!-- 首屏内容 -->
+    <div id="firstScreen" class="layer clearfix">
+        <!-- 左边的内容 -->
+        <div class="firstLeft fl">
+            <!-- 侧边导航 -->
+            <div class="sideNav fl">
+                <ul>
+                    <li>
+                        <a href="#">女装</a> / <a href="#">男装</a> / <a href="#">内衣</a><span class="iconfont icon-iconfonticonfonti2copycopy fr"></span>
+                    </li>
+                    <li>
+                        <a href="#">鞋靴</a> / <a href="#">箱包</a> / <a href="#">配件</a><span class="iconfont icon-iconfonticonfonti2copycopy fr"></span>
+                    </li>
+                    <li>
+                        <a href="#">童装玩具</a> / <a href="#">孕产</a> / <a href="#">用品</a><span class="iconfont icon-iconfonticonfonti2copycopy fr"></span>
+                    </li>
+                    <li>
+                        <a href="#">家电</a> / <a href="#">数码</a> / <a href="#">手机</a><span class="iconfont icon-iconfonticonfonti2copycopy fr"></span>
+                    </li>
+                    <li>
+                        <a href="#">美妆</a> / <a href="#">洗护</a> / <a href="#">保健品</a><span class="iconfont icon-iconfonticonfonti2copycopy fr"></span>
+                    </li>
+                    <li>
+                        <a href="#">珠宝</a> / <a href="#">眼镜</a> / <a href="#">手表</a><span class="iconfont icon-iconfonticonfonti2copycopy fr"></span>
+                    </li>
+                    <li>
+                        <a href="#">运动</a> / <a href="#">户外</a> / <a href="#">乐器</a><span class="iconfont icon-iconfonticonfonti2copycopy fr"></span>
+                    </li>
+                    <li>
+                        <a href="#">游戏</a> / <a href="#">动漫</a> / <a href="#">影视</a><span class="iconfont icon-iconfonticonfonti2copycopy fr"></span>
+                    </li>
+                    <li>
+                        <a href="#">美食</a> / <a href="#">生鲜</a> / <a href="#">零食</a><span class="iconfont icon-iconfonticonfonti2copycopy fr"></span>
+                    </li>
+                    <li>
+                        <a href="#">鲜花</a> / <a href="#">宠物</a> / <a href="#">农资</a><span class="iconfont icon-iconfonticonfonti2copycopy fr"></span>
+                    </li>
+                    <li>
+                        <a href="#">面料集采</a> / <a href="#">装修</a> / <a href="#">建材</a><span class="iconfont icon-iconfonticonfonti2copycopy fr"></span>
+                    </li>
+                    <li>
+                        <a href="#">家具</a> / <a href="#">家饰</a> / <a href="#">家纺</a><span class="iconfont icon-iconfonticonfonti2copycopy fr"></span>
+                    </li>
+                    <li>
+                        <a href="#">汽车</a> / <a href="#">二手车</a> / <a href="#">用品</a><span class="iconfont icon-iconfonticonfonti2copycopy fr"></span>
+                    </li>
+                    <li>
+                        <a href="#">办公</a> / <a href="#">DIY</a> / <a href="#">五金电子</a><span class="iconfont icon-iconfonticonfonti2copycopy fr"></span>
+                    </li>
+                    <li>
+                        <a href="#">百货</a> / <a href="#">餐厨</a> / <a href="#">家庭保健</a><span class="iconfont icon-iconfonticonfonti2copycopy fr"></span>
+                    </li>
+                    <li>
+                        <a href="#">学习</a> / <a href="#">卡券</a> / <a href="#">本地服务</a><span class="iconfont icon-iconfonticonfonti2copycopy fr"></span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- 图片1容器 -->
+            <div class="img1Box fr">
+                <div class="pic fl">
+                    <div class="img">
+                        <a href="#"><img src="images/pic_01.jpg" alt=""></a>
+                    </div>
+
+                    <button class="iconfont icon-zuojiantou leftBtn"></button>
+                    <button class="iconfont icon-iconfonticonfonti2copycopy rightBtn"></button>
+
+                    <div class="circle">
+                        <span class="active"></span><span></span><span></span><span></span><span></span>
+                    </div>
+                </div>
+                <div class="ad fr">
+                    <a href="#"><img src="images/ad01.jpg" alt=""></a>
+                </div>
+            </div>
+
+            <!-- 图片2容器 -->
+            <div class="img2Box fr">
+                <div class="pic fl">
+                    <div class="picTitle">
+                        <div class="text clearfix">
+                            <span class="fl bg">理想生活上天猫</span>
+                            <span class="fr"><i>1</i>/6</span>
+                        </div>
+                        <div class="line">
+                            <span></span>
+                        </div>
+                    </div>
+
+                    <div class="img">
+                        <a href="#"><img src="images/pic_02.jpg" alt=""></a><a href="#"><img src="images/pic_03.jpg" alt=""></a>
+                    </div>
+
+                    <button class="iconfont icon-zuojiantou leftBtn"></button>
+                    <button class="iconfont icon-iconfonticonfonti2copycopy rightBtn"></button>
+                </div>
+                <div class="ad fr">
+                    <p class="title">今日特卖</p>
+                    <a href="#"><img src="images/pic_04.jpg" alt=""></a>
+                </div>
+            </div>
+
+            <!-- 淘宝头条 -->
+            <div class="news fl">
+                <div class="hd fl">
+                    <h3>淘宝头条</h3>
+                    <p>让你的生活更有趣</p>
+                </div>
+                <div class="newList fr">
+                    <div class="item">
+                        <a href="#" class="fl img"><img src="images/justin.jpg" alt=""></a>
+                        <h4><a href="#">微漫酱访谈第三期：超萌舞见弥音音！</a></h4>
+                        <p><a href="#">哈喽，大家好，我是你们可爱的微漫酱，今天我们请到了一位舞见小姐姐来做客我们的访谈事，她就是弥音音！</a></p>
+                        <a href="#" class="more">更多></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 右边的内容 -->
+        <div class="firstRight fr">
+            <!-- 用户 -->
+            <div class="user">
+                <a href="#" class="avatar"><img src="images/avatar.jpg" alt=""></a>
+                <p class="username">Hi! 你好</p>
+                <p class="members">
+                    <a href="#" class="gold">领淘金币抵钱</a>
+                    <a href="#" class="club">会员俱乐部</a>
+                </p>
+                <div class="btn">
+                    <button class="login">登陆</button>
+                    <button class="register">注册</button>
+                    <button class="shop">开店</button>
+                </div>
+            </div>
+
+            <!-- 举报 -->
+            <a href="#" class="tipOff">
+                <span>网上有害信息举报专区</span><i class="iconfont icon-yousanjiaoxing"></i>
+            </a>
+
+            <!-- 公告 -->
+            <div class="notice">
+                <ul class="title">
+                    <li class="active"><a href="#">公告</a></li>
+                    <li><a href="#">规则</a></li>
+                    <li><a href="#">论坛</a></li>
+                    <li><a href="#">安全</a></li>
+                    <li><a href="#">公益</a></li>
+                </ul>
+                <ul class="content clearfix">
+                    <li class="item1"><a href="#">天猫618进入热身 84个品牌在天猫共获粉丝4.3亿</a></li>
+                    <li><a href="#">天猫618五折卖车</a></li>
+                    <li><a href="#">天猫618直播间观看指南</a></li>
+                </ul>
+            </div>
+
+            <!-- 图标 -->
+            <table class="icon">
+                <tr>
+                    <td class="item1">
+                        <a href="#">
+                            <span></span>
+                            <i>充话费</i>
+                        </a>
+                    </td>
+                    <td class="item2">
+                        <a href="#">
+                            <span></span>
+                            <i>旅行</i>
+                        </a>
+                    </td>
+                    <td class="item3">
+                        <a href="#">
+                            <span></span>
+                            <i>车险</i>
+                        </a>
+                    </td>
+                    <td class="item4">
+                        <a href="#">
+                            <span></span>
+                            <i>游戏</i>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="item5">
+                        <a href="#">
+                            <span></span>
+                            <i>彩票</i>
+                        </a>
+                    </td>
+                    <td class="item6">
+                        <a href="#">
+                            <span></span>
+                            <i>电影</i>
+                        </a>
+                    </td>
+                    <td class="item7">
+                        <a href="#">
+                            <span></span>
+                            <i>酒店</i>
+                        </a>
+                    </td>
+                    <td class="item8">
+                        <a href="#">
+                            <span></span>
+                            <i>理财</i>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="item9">
+                        <a href="#">
+                            <span></span>
+                            <i>找服务</i>
+                        </a>
+                    </td>
+                    <td class="item10">
+                        <a href="#">
+                            <span></span>
+                            <i>演出</i>
+                        </a>
+                    </td>
+                    <td class="item11">
+                        <a href="#">
+                            <span></span>
+                            <i>水电煤</i>
+                        </a>
+                    </td>
+                    <td class="item12">
+                        <a href="#">
+                            <span></span>
+                            <i>火车票</i>
+                        </a>
+                    </td>
+                </tr>                    
+            </table>
+
+            <!-- APP -->
+            <div class="app">
+                <div class="title clearfix">
+                    <h3 class="fl">阿里APP</h3>
+                    <a href="#" class="fr">更多></a>
+                </div>
+                <ul class="appIcon">
+                    <!-- 
+                        webp格式是谷歌公司开发的，对比png,jpg，可减少大部分图片大小（如100M => 30M），但它只能在网站中显示出来
+                        IE不支持，Firefox65+支持，Chrome30+支持 
+                        优化千万条，图片第一条，加载速度慢，用户两行泪
+                    -->
+                    <li><a href="#"><img src="images/aa_01.webp" alt=""></a></li>
+                    <li><a href="#"><img src="images/aa_02.png" alt=""></a></li>
+                    <li><a href="#"><img src="images/aa_03.png" alt=""></a></li>
+                    <li><a href="#"><img src="images/aa_04.png" alt=""></a></li>
+                    <li><a href="#"><img src="images/aa_05.png" alt=""></a></li>
+                    <li><a href="#"><img src="images/aa_05.png" alt=""></a></li>
+                    <li><a href="#"><img src="images/aa_04.png" alt=""></a></li>
+                    <li><a href="#"><img src="images/aa_03.png" alt=""></a></li>
+                    <li><a href="#"><img src="images/aa_02.png" alt=""></a></li>
+                    <li><a href="#"><img src="images/aa_01.png" alt=""></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- 有好货与爱逛街 -->
+    <div class="layer clearfix mt10">
+        <!-- 有好货 -->
+        <div class="goods fl">
+            <div class="head clearfix">
+                <h3 class="fl">
+                    <img src="images/goods.png" alt="有好货">
+                    <span class="iconfont icon-ico"></span>
+                    <i>与品质生活不期而遇</i>
+                </h3>
+                <a href="#" class="fr change">换一换</a>
+            </div>
+            <ul class="list">
+                <li>
+                    <a href="#"><img src="images/shop_img_1.webp" alt=""></a>
+                    <h4><a href="#">YSL限量眼影银盘</a></h4>
+                    <p class="text"><a href="#">金属边框闪亮眼影盒，彰显低调的奢华之美。</a></p>
+                    <a href="#" class="comment">
+                        <span class="iconfont icon-smiling"></span><i>5390 人说好</i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#"><img src="images/shop_img_2.webp" alt=""></a>
+                    <h4><a href="#">YSL限量眼影银盘</a></h4>
+                    <p class="text"><a href="#">金属边框闪亮眼影盒，彰显低调的奢华之美。</a></p>
+                    <a href="#" class="comment">
+                        <span class="iconfont icon-smiling"></span><i>5390 人说好</i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#"><img src="images/shop_img_3.webp" alt=""></a>
+                    <h4><a href="#">YSL限量眼影银盘</a></h4>
+                    <p class="text"><a href="#">金属边框闪亮眼影盒，彰显低调的奢华之美。</a></p>
+                    <a href="#" class="comment">
+                        <span class="iconfont icon-smiling"></span><i>5390 人说好</i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#"><img src="images/shop_img_4.webp" alt=""></a>
+                    <h4><a href="#">YSL限量眼影银盘</a></h4>
+                    <p class="text"><a href="#">金属边框闪亮眼影盒，彰显低调的奢华之美。</a></p>
+                    <a href="#" class="comment">
+                        <span class="iconfont icon-smiling"></span><i>5390 人说好</i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#"><img src="images/shop_img_5.webp" alt=""></a>
+                    <h4><a href="#">YSL限量眼影银盘</a></h4>
+                    <p class="text"><a href="#">金属边框闪亮眼影盒，彰显低调的奢华之美。</a></p>
+                    <a href="#" class="comment">
+                        <span class="iconfont icon-smiling"></span><i>5390 人说好</i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#"><img src="images/shop_img_6.webp" alt=""></a>
+                    <h4><a href="#">YSL限量眼影银盘</a></h4>
+                    <p class="text"><a href="#">金属边框闪亮眼影盒，彰显低调的奢华之美。</a></p>
+                    <a href="#" class="comment">
+                        <span class="iconfont icon-smiling"></span><i>5390 人说好</i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- 爱逛街 -->
+        <!-- 样式shopping要放在样式goods，才能达到覆盖的效果 -->
+        <div class="goods fr shopping">
+            <div class="head clearfix">
+                <h3 class="fl">
+                    <img src="images/shopping.png" alt="有好货">
+                    <span class="iconfont icon-ico"></span>
+                    <i>献给聪明可爱的你</i>
+                </h3>
+                <a href="#" class="fr change">换一换</a>
+            </div>
+            <ul class="list">
+                <li>
+                    <a href="#"><img src="images/shop_img_7.webp" alt=""></a>
+                    <p class="text">
+                        <span class="iconfont icon-quotation"></span>
+                        <a href="#">今秋外套穿什么，复古民族风毛衣外套一件搞定</a>
+                    </p>
+                    <a href="#" class="comment">
+                        <span><img src="images/small_avatar.jpg" alt=""></span><i>爱逛***01</i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#"><img src="images/shop_img_8.webp" alt=""></a>
+                    <p class="text">
+                        <span class="iconfont icon-quotation"></span>
+                        <a href="#">今秋外套穿什么，复古民族风毛衣外套一件搞定</a>
+                    </p>
+                    <a href="#" class="comment">
+                        <span><img src="images/small_avatar.jpg" alt=""></span><i>爱逛***01</i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#"><img src="images/shop_img_9.webp" alt=""></a>
+                    <p class="text">
+                        <span class="iconfont icon-quotation"></span>
+                        <a href="#">今秋外套穿什么，复古民族风毛衣外套一件搞定</a>
+                    </p>
+                    <a href="#" class="comment">
+                        <span><img src="images/small_avatar.jpg" alt=""></span><i>爱逛***01</i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#"><img src="images/shop_img_10.webp" alt=""></a>
+                    <p class="text">
+                        <span class="iconfont icon-quotation"></span>
+                        <a href="#">今秋外套穿什么，复古民族风毛衣外套一件搞定</a>
+                    </p>
+                    <a href="#" class="comment">
+                        <span><img src="images/small_avatar.jpg" alt=""></span><i>爱逛***01</i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#"><img src="images/shop_img_11.webp" alt=""></a>
+                    <p class="text">
+                        <span class="iconfont icon-quotation"></span>
+                        <a href="#">今秋外套穿什么，复古民族风毛衣外套一件搞定</a>
+                    </p>
+                    <a href="#" class="comment">
+                        <span><img src="images/small_avatar.jpg" alt=""></span><i>爱逛***01</i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#"><img src="images/shop_img_12.webp" alt=""></a>
+                    <p class="text">
+                        <span class="iconfont icon-quotation"></span>
+                        <a href="#">今秋外套穿什么，复古民族风毛衣外套一件搞定</a>
+                    </p>
+                    <a href="#" class="comment">
+                        <span><img src="images/small_avatar.jpg" alt=""></span><i>爱逛***01</i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 右侧固定定位导航 -->
+    <div id="tool">
+        <span><img src="images/sideNav.png" alt=""></span>
+        <div class="btn">
+            <a href="#" class="c4 active">爱逛 好货</a>
+            <a href="#" class="c5">好店 直播</a>
+            <a href="#" class="c6">品质 特色</a>
+            <a href="#" class="c7">实惠 热卖</a>
+            <a href="#" class="c4">猜你 喜欢</a>
+            <a href="#" class="item6">反馈</a>
+            <a href="#" class="">暴恐 举报</a>
+        </div>
+    </div>
+</body>
+</html>
