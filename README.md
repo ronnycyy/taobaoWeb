@@ -1,4 +1,5 @@
 # taobaoWeb
 ### 通过编写淘宝网首页的部分内容，练习html+css、布局技巧和图标的使用等。
 
-#### 下载后直接打开index.html即可，建议使用谷歌浏览器
+#### 下载后直接打开index.html即可
+##### 支持情况：Chrome、Firefox、IE8+
